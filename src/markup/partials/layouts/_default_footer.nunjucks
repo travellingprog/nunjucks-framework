@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>myPage | {{ file.frontMatter.title }}</title>
+            {% include "_head.nunjucks" %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+            {% include "headers/_retail.nunjucks" %}
+        {% endblock %}
+
+        
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+
+            {% block footer %}
+                {% include "footers/_mini.nunjucks" %}
+            {% endblock %}
+        </div>
+
+        {% block foot %}
+            {% include "foot/_default.nunjucks" %}
+            {% include "foot/_sticky_container.nunjucks" %}
+        {% endblock %}
+    </body>
+</html>

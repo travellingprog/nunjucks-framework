@@ -1,0 +1,22 @@
+{
+  "name": "nunjucks-framework",
+  "version": "0.0.1",
+  "description": "Nunjucks Prototyping framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prototype",
+    "framework"
+  ],
+  "author": "erick.c@myplanet.com",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-front-matter": "^1.3.0",
+    "gulp-nunjucks-render": "^1.1.0",
+    "gulp-rename": "^1.2.2"
+  }
+}
