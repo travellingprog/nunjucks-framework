@@ -10,14 +10,20 @@ gulp.task('clean', function () {
 });
 
 gulp.task('html', function () {
-	var fm = require('gulp-front-matter'),
+	var data = require('gulp-data'),
+		fm = require('gulp-front-matter'),
 		nunjucksRender = require('gulp-nunjucks-render'),
-		rename = require('gulp-rename');
+		rename = require('gulp-rename'),
+		requireGlob = require('require-glob');
 
 	nunjucksRender.nunjucks.configure(['src/markup/partials/'], {watch: false});
+	var dataObj = requireGlob.sync('./src/data/**/*.{js,json}');
 
 	return gulp
 		.src('src/markup/pages/**/*.nunjucks')
+		.pipe(data(function() {
+			return dataObj;
+		}))
 		.pipe(fm({property: 'data.frontMatter'}))
 		.pipe(nunjucksRender())
 		.pipe(rename(function (path) {
