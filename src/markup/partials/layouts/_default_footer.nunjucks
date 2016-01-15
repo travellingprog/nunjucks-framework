@@ -4,7 +4,7 @@
         {% block head %}
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>myPage | {{ file.frontMatter.title }}</title>
+            <title>myPage | {{ frontMatter.title }}</title>
             {% include "_head.nunjucks" %}
         {% endblock %}
     </head>

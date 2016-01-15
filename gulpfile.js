@@ -18,7 +18,7 @@ gulp.task('html', function () {
 
 	return gulp
 		.src('src/markup/pages/**/*.nunjucks')
-		.pipe(fm())
+		.pipe(fm({property: 'data.frontMatter'}))
 		.pipe(nunjucksRender())
 		.pipe(rename(function (path) {
 			var dirNameArray = path.dirname.split('/');
